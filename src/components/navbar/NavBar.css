@@ -1,0 +1,114 @@
+/* Estilos generales del navbar */
+.navbar {
+    width: 100%;
+    background-color: #1c1c1c; /* color oscuro para darle estilo tipo JetBrains */
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  /* Marca / Logo */
+  .navbar__brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+  }
+  
+  /* Botón de búsqueda */
+  .navbar__search-btn {
+    background: none;
+    border: 1px solid #888;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Input de búsqueda (cuando searchActive es true) */
+  .navbar__search-bar {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .navbar__search-input {
+    padding: 0.3rem;
+    border: 1px solid #888;
+    border-radius: 2px;
+  }
+  
+  /* Enlaces principales */
+  .navbar__links {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Cada item */
+  .navbar__item {
+    position: relative; /* Para ubicar submenús absolutamente */
+  }
+  
+  /* Botón del item principal */
+  .navbar__item-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+  }
+  
+  /* Submenú */
+  .navbar__submenu {
+    list-style-type: none;
+    position: absolute;
+    top: 2.2rem; /* ajusta según la altura del nav */
+    left: 0;
+    background: #2e2e2e;
+    padding: 0.5rem;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  
+  .navbar__submenu li {
+    color: #fff;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+  }
+  
+  /* Hover en submenú */
+  .navbar__submenu li:hover {
+    background-color: #444;
+  }
+  
+  /* Responsivo: en pantallas pequeñas, 
+     podrías usar un diseño tipo hamburguesa o stack vertical */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+    }
+  
+    .navbar__links {
+      flex-direction: column;
+      width: 100%;
+      background-color: #1c1c1c;
+    }
+  
+    .navbar__item {
+      width: 100%;
+    }
+  
+    .navbar__submenu {
+      position: static;
+      box-shadow: none;
+    }
+  }
+  

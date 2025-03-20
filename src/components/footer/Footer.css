@@ -1,0 +1,101 @@
+/* Estilos base del footer */
+.footer {
+    background-color: #111;        /* Fondo oscuro */
+    color: #fff;                   /* Texto blanco */
+    padding: 2rem 1rem;           /* Espaciado interno */
+    font-family: sans-serif;       /* Ejemplo de tipografía */
+  }
+  
+  /* Contenedor principal para flexbox */
+  .footer__container {
+    display: flex;
+    justify-content: space-around; /* Separa los bloques horizontalmente */
+    flex-wrap: wrap;               /* Permite que los bloques pasen a nueva línea si la pantalla es pequeña */
+    margin-bottom: 2rem;          /* Espacio de separación con la parte de abajo */
+  }
+  
+  /* Logo y descripción */
+  .footer__logo-section {
+    flex: 1;                  /* Para que ocupe espacio flexible */
+    max-width: 400px;         /* Para que no se extienda demasiado */
+    margin: 1rem;
+    text-align: left;
+  }
+  
+  .footer__logo {
+    max-width: 150px;         /* Ajusta el tamaño del logo */
+    margin-bottom: 1rem;
+  }
+  
+  .footer__description {
+    line-height: 1.5;
+    color: #bbb;              /* Un gris un poco más claro */
+  }
+  
+  /* Bloque de enlaces */
+  .footer__links-block {
+    flex: 1;                  /* Cada bloque de links ocupa espacio flexible */
+    min-width: 200px;         /* Para que no se haga muy angosto */
+    margin: 1rem;
+  }
+  
+  /* Título de cada bloque */
+  .footer__title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  /* Lista de enlaces */
+  .footer__links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer__links li {
+    margin: 0.5rem 0;
+  }
+  
+  .footer__links li a {
+    text-decoration: none;
+    color: #bbb;                  /* color inicial */
+    transition: color 0.3s ease;  /* efecto suave al pasar el cursor */
+  }
+  
+  /* Efecto hover: cambia el color cuando pasas el cursor */
+  .footer__links li a:hover {
+    color: #e91e63; /* Ej. color rosado */
+  }
+  
+  /* Barra de copyright abajo */
+  .footer__bottom {
+    border-top: 1px solid #333;    /* Línea divisoria sutil */
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;               /* Para que en pantallas pequeñas se reubique */
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    /* Apilar los bloques verticalmente */
+    .footer__container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer__logo-section, .footer__links-block {
+      margin: 1rem 0;
+      max-width: none;
+      flex: unset; /* Desactivamos flex fijo */
+    }
+  
+    .footer__bottom {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+  

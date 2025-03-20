@@ -2,12 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/hola.png'
 import './App.css'
+import Navbar from './components/navbar/NavBar'
+import Footer from './components/footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Navbar />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,6 +31,7 @@ function App() {
       <p className="read-the-docs">
         No clickes en el logo de React, es una trampa
       </p>
+      <Footer />
     </>
   )
 }
