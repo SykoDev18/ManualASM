@@ -47,7 +47,7 @@ function Footer() {
 
       {/* Barra inferior de copyright */}
       <div className="footer__bottom">
-        <span>© Derechos de autor WoMakersCode 2021-2024. Reservados todos los derechos.</span>
+        <span>© Derechos de autor Manual NASM 2021-2025. Reservados todos los derechos.</span>
         <span className="footer__bottom-right">Mujeres + Tecnología = &lt;fuerte&gt;</span>
       </div>
     </footer>
