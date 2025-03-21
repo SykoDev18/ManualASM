@@ -13,22 +13,17 @@ function Footer() {
         <div className="footer__logo-section">
           <img src={logoWomakers} alt="WomakersCode Logo" className="footer__logo" />
           <p className="footer__description">
-            Mais Mulheres em Tech es una iniciativa de WoMakersCode, una ONG brasileña
-            sin fines de lucro con la misión de promover mujeres diversas en el sector
-            tecnológico a través de cursos, mentorías en tecnología y soft skills, preparación
-            para certificaciones, eventos e iniciativas enfocadas en la empleabilidad.
+          NASM (Netwide Assembler) es un ensamblador de código abierto para la arquitectura x86 y x86-64, ampliamente utilizado en la programación de bajo nivel y en la creación de código optimizado para sistemas operativos como Linux y Windows. Su sintaxis es sencilla y flexible, permitiendo escribir código en ensamblador con mayor claridad y control sobre el hardware.
           </p>
         </div>
 
         {/* Sección con enlaces de “Institucional” */}
         <div className="footer__links-block">
-          <h3 className="footer__title">Institucional</h3>
+          <h3 className="footer__title">Recursos</h3>
           <ul className="footer__links">
-            <li><a href="#">CÓDIGO DE WOMAKERS</a></li>
-            <li><a href="#">NUESTRO IMPACTO</a></li>
-            <li><a href="#">CAPACITACIÓN EN TI</a></li>
-            <li><a href="#">EVENTOS</a></li>
-            <li><a href="#">PARA EMPRESAS</a></li>
+            <li><a href="#">CODIGO</a></li>
+            <li><a href="#">MANUALES</a></li>
+            <li><a href="#">EJERCICIOS</a></li>
           </ul>
         </div>
 
@@ -38,7 +33,6 @@ function Footer() {
           <ul className="footer__links">
             <li><a href="#">CURSOS</a></li>
             <li><a href="#">APOYO</a></li>
-            <li><a href="#">CÓDIGO DE CONDUCTA</a></li>
             <li><a href="#">CONDICIONES DE USO</a></li>
             <li><a href="#">POLÍTICA DE PRIVACIDAD</a></li>
           </ul>
@@ -48,7 +42,7 @@ function Footer() {
       {/* Barra inferior de copyright */}
       <div className="footer__bottom">
         <span>© Derechos de autor Manual NASM 2021-2025. Reservados todos los derechos.</span>
-        <span className="footer__bottom-right">Mujeres + Tecnología = &lt;fuerte&gt;</span>
+        <span className="footer__bottom-right">Hablar es barato. !Ensename el codigo!</span>
       </div>
     </footer>
   );
