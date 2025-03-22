@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.css";
 
-// Ejemplo de URL de logo (ajusta según tu ruta o URL real)
 import logoWomakers from "../../assets/Hehe.png"
 
 function Footer() {
@@ -22,7 +21,7 @@ function Footer() {
           <h3 className="footer__title">Recursos</h3>
           <ul className="footer__links">
             <li><a href="#">CODIGO</a></li>
-            <li><a href="#">MANUALES</a></li>
+            <li><a href="#">DOCUMENTACION</a></li>
             <li><a href="#">EJERCICIOS</a></li>
           </ul>
         </div>
@@ -31,10 +30,9 @@ function Footer() {
         <div className="footer__links-block">
           <h3 className="footer__title">Plataforma</h3>
           <ul className="footer__links">
-            <li><a href="#">CURSOS</a></li>
+            <li><a href="#">BLOG</a></li>
             <li><a href="#">APOYO</a></li>
-            <li><a href="#">CONDICIONES DE USO</a></li>
-            <li><a href="#">POLÍTICA DE PRIVACIDAD</a></li>
+            <li><a href="#">VIDEOS</a></li>
           </ul>
         </div>
       </div>

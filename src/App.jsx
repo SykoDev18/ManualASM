@@ -4,6 +4,10 @@ import viteLogo from './assets/hola.png'
 import './App.css'
 import Navbar from './components/navbar/NavBar'
 import Footer from './components/footer/Footer'
+import Welcome from './components/Bienvenida/Welcome'
+import Frases from './components/Carrusel frases/CarouselF'
+import Posible from './components/Posible/Posible'
+import Cookie from './components/Cookies/Cookie'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +15,10 @@ function App() {
   return (
     <>
       <Navbar />
+      <Welcome />
+      <Frases />
+      <Posible />
+      <Cookie />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

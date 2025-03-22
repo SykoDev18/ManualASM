@@ -1,0 +1,84 @@
+.testimonial-carousel {
+    position: relative;     /* Para posicionar botones absolutos */
+    max-width: 900px;       /* Ajusta el tamaño del carrusel */
+    margin: 2rem auto;      /* Centra horizontalmente */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;       /* Oculta contenido que se sale del contenedor */
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  /* Flechas (botones) */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #eaeaea;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  
+  .carousel-btn:hover {
+    background-color: #ccc;
+  }
+  
+  .left {
+    left: 20px;
+  }
+  
+  .right {
+    right: 20px;
+  }
+  
+  /* Contenedor de citas */
+  .testimonial-container {
+    position: relative;
+    min-height: 150px; /* Para evitar salto si la cita es muy corta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Cada “slide” (cita) */
+  .testimonial-slide {
+    position: absolute;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Cuando el slide está activo, lo mostramos */
+  .testimonial-slide.active {
+    opacity: 1;
+    position: relative;
+  }
+  
+  /* Texto y autor */
+  .testimonial-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-author {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  /* Responsive: ajustamos la fuente en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .testimonial-text {
+      font-size: 1.05rem;
+    }
+  }
+  

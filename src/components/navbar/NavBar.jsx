@@ -1,118 +1,48 @@
 import React, { useState } from "react";
-import "./NavBar.css";
+import "./Navbar.css";
 
 function Navbar() {
-  // Estado para mostrar/ocultar el menú principal
-  const [openMenu, setOpenMenu] = useState(null);
-  // Estado para modo de búsqueda
-  const [searchActive, setSearchActive] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Maneja la apertura/cierre de un submenú
-  const handleMenuClick = (menuId) => {
-    // Si se hace clic en el mismo menú, lo cierra
-    // si es diferente, abre el nuevo
-    setOpenMenu((prev) => (prev === menuId ? null : menuId));
-  };
-
-  // Al hacer clic en el botón de búsqueda
-  // se oculta todo menos el input
-  const handleSearchClick = () => {
-    setSearchActive(!searchActive);
-    // opcional: cerrar cualquier menú abierto
-    setOpenMenu(null);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <nav className="navbar">
-      {/* Logo / Marca */}
-      <div className="navbar__brand">NASM</div>
+    <header className="nasm-navbar">
+      {/* Logo e ícono a la izquierda */}
+      <div className="nasm-navbar__brand">
+        <span className="nasm-logo">&#9650;</span>
+        <span className="nasm-title">NASM</span>
+      </div>
 
-      {/* Botón de búsqueda */}
-      <button className="navbar__search-btn" onClick={handleSearchClick}>
-        {searchActive ? "Cerrar" : "Buscar"}
+      <nav className={`nasm-navbar__links ${isMobileMenuOpen ? "open" : ""}`}>
+        <a href="#" className="nasm-link nasm-active">Codigo</a>
+        <a href="#">Documentacion</a>
+        <a href="#">Blog</a>
+        <a href="#">Videos</a>
+      </nav>
+
+      {/* Buscador + Botón a la derecha */}
+      <div className="nasm-navbar__actions">
+        <input
+          type="text"
+          placeholder="Buscar documentación..."
+          className="nasm-navbar__search"
+        />
+        <button className="nasm-navbar__btn nasm-btn-transparent">
+          &#9650; Repositorios
+        </button>
+        <button className="nasm-navbar__btn nasm-btn-dark">
+          Aprender
+        </button>
+      </div>
+
+      {/* Botón hamburguesa para mobile */}
+      <button className="nasm-navbar__hamburger" onClick={toggleMobileMenu}>
+        &#9776; {/* ícono hamburguesa */}
       </button>
-
-      {/* Barra de búsqueda (sólo se muestra si searchActive es true) */}
-      {searchActive && (
-        <div className="navbar__search-bar">
-          <input
-            type="text"
-            placeholder="Buscar..."
-            className="navbar__search-input"
-          />
-        </div>
-      )}
-
-      {/* Contenedor principal de links (oculto si searchActive es true) */}
-      {!searchActive && (
-        <ul className="navbar__links">
-          <li className="navbar__item">
-            <button
-              className="navbar__item-btn"
-              onClick={() => handleMenuClick("desarrolladores")}
-            >
-              Para Desarrolladores
-            </button>
-            {/* Submenú */}
-            {openMenu === "desarrolladores" && (
-              <ul className="navbar__submenu">
-                <li>Para uso particular</li>
-                <li>Para equipos y organizaciones</li>
-                <li>Programas y ofertas</li>
-              </ul>
-            )}
-          </li>
-
-          <li className="navbar__item">
-            <button
-              className="navbar__item-btn"
-              onClick={() => handleMenuClick("equipos")}
-            >
-              Para Equipos
-            </button>
-            {openMenu === "equipos" && (
-              <ul className="navbar__submenu">
-                <li>TeamCity</li>
-                <li>YouTrack</li>
-                <li>Datalore</li>
-                <li>Qodana</li>
-                <li>CodeCanvas</li>
-              </ul>
-            )}
-          </li>
-
-          <li className="navbar__item">
-            <button
-              className="navbar__item-btn"
-              onClick={() => handleMenuClick("educacion")}
-            >
-              Educación
-            </button>
-            {openMenu === "educacion" && (
-              <ul className="navbar__submenu">
-                <li>JetBrains Academy</li>
-                <li>Cursos en línea</li>
-              </ul>
-            )}
-          </li>
-
-          <li className="navbar__item">
-            <button
-              className="navbar__item-btn"
-              onClick={() => handleMenuClick("tienda")}
-            >
-              Tienda
-            </button>
-            {openMenu === "tienda" && (
-              <ul className="navbar__submenu">
-                <li>All Products Pack</li>
-                <li>Ofertas especiales</li>
-              </ul>
-            )}
-          </li>
-        </ul>
-      )}
-    </nav>
+    </header>
   );
 }
 
