@@ -1,7 +1,20 @@
-import React from "react";
-import "./Welcome.css"; 
+import React, { useState } from "react";
+import "./Welcome.css";
 
 function WelcomeSection() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyCode = async () => {
+    try {
+      const code = "nasm -f elf64 hello.asm && ld hello.o -o hello";
+      await navigator.clipboard.writeText(code);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error("Error al copiar:", err);
+    }
+  };
+
   return (
     <section className="welcome-section">
       <div className="welcome-section__container">
@@ -14,12 +27,27 @@ function WelcomeSection() {
         </p>
 
         <div className="welcome-section__buttons">
-          <button className="nasm-btn nasm-btn-dark">Empezar</button>
-          <button className="nasm-btn nasm-btn-light">Aprenda NASM</button>
+          <button 
+            className="nasm-btn nasm-btn-dark" 
+            onClick={handleCopyCode}
+            aria-label="Copiar comando de compilación"
+          >
+            {isCopied ? "¡Copiado!" : "Hola mundo"}
+          </button>
+          
+          <a 
+            href="https://www.nasm.us/xdoc/2.16.03/nasmdoc.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <button className="nasm-btn nasm-btn-light">
+              Aprenda NASM
+            </button>
+          </a>
         </div>
 
         <p className="welcome-section__snippet">
-          ▲ ~ <code>nasm -f elf64 hello.asm &amp;&amp; ld hello.o -o hello</code>
+          ~ <code>nasm -f elf64 hello.asm &amp;&amp; ld hello.o -o hello</code>
         </p>
       </div>
     </section>

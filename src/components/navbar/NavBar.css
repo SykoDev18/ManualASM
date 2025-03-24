@@ -27,9 +27,19 @@
 }
 
 .nasm-logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #000;  /* Ajusta el color del ícono/triángulo */
+  display: flex;
+  align-items: center;
+}
+
+.nasm-logo__img {
+  width: 24px;        
+  height: 24px;
+  object-fit: contain; 
+  transition: opacity 0.3s ease;
+}
+
+.nasm-logo__img:hover {
+  opacity: 0.8;       
 }
 
 .nasm-title {

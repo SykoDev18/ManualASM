@@ -21,8 +21,8 @@ function Footer() {
           <h3 className="footer__title">Recursos</h3>
           <ul className="footer__links">
             <li><a href="#">CODIGO</a></li>
-            <li><a href="#">DOCUMENTACION</a></li>
-            <li><a href="#">EJERCICIOS</a></li>
+            <li><a href="https://www.nasm.us/xdoc/2.16.03/html/nasmdoc0.html">DOCUMENTACION</a></li>
+            <li><a href="https://github.com/netwide-assembler/nasm">REPOSITORIOS</a></li>
           </ul>
         </div>
 
@@ -30,9 +30,8 @@ function Footer() {
         <div className="footer__links-block">
           <h3 className="footer__title">Plataforma</h3>
           <ul className="footer__links">
-            <li><a href="#">BLOG</a></li>
-            <li><a href="#">APOYO</a></li>
-            <li><a href="#">VIDEOS</a></li>
+            <li><a href="https://forum.nasm.us/">BLOG</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL2EF13wm-hWCoj6tUBGUmrkJmH1972dBB">VIDEOS</a></li>
           </ul>
         </div>
       </div>

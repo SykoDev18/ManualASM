@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import nasm from "../../assets/nasm.png";
 
 function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,17 +11,22 @@ function Navbar() {
 
   return (
     <header className="nasm-navbar">
-      {/* Logo e ícono a la izquierda */}
       <div className="nasm-navbar__brand">
-        <span className="nasm-logo">&#9650;</span>
+        <span className="nasm-logo">
+          <img 
+            src={nasm} 
+            alt="NASM Logo" 
+            className="nasm-logo__img"
+          />
+        </span>
         <span className="nasm-title">NASM</span>
       </div>
 
       <nav className={`nasm-navbar__links ${isMobileMenuOpen ? "open" : ""}`}>
         <a href="#" className="nasm-link nasm-active">Codigo</a>
-        <a href="#">Documentacion</a>
-        <a href="#">Blog</a>
-        <a href="#">Videos</a>
+        <a href="https://www.nasm.us/xdoc/2.16.03/html/nasmdoc0.html">Documentacion</a>
+        <a href="https://forum.nasm.us/">Blog</a>
+        <a href="https://www.youtube.com/playlist?list=PL2EF13wm-hWCoj6tUBGUmrkJmH1972dBB">Videos</a>
       </nav>
 
       {/* Buscador + Botón a la derecha */}
@@ -30,12 +36,16 @@ function Navbar() {
           placeholder="Buscar documentación..."
           className="nasm-navbar__search"
         />
+        <a href="https://github.com/netwide-assembler/nasm" >
         <button className="nasm-navbar__btn nasm-btn-transparent">
-          &#9650; Repositorios
+          &#128060; Repositorios
         </button>
+        </a>
+        <a href="https://www.nasm.us/xdoc/2.16.03/nasmdoc.pdf">
         <button className="nasm-navbar__btn nasm-btn-dark">
           Aprender
         </button>
+        </a>
       </div>
 
       {/* Botón hamburguesa para mobile */}
