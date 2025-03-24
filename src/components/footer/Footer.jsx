@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-
+import { Link } from "react-router-dom";
 import logoWomakers from "../../assets/Hehe.png"
 
 function Footer() {
@@ -20,7 +20,7 @@ function Footer() {
         <div className="footer__links-block">
           <h3 className="footer__title">Recursos</h3>
           <ul className="footer__links">
-            <li><a href="#">CODIGO</a></li>
+            <li><Link to="/ejercicios" className="nasm-link nasm-active">CODIGO</Link></li>
             <li><a href="https://www.nasm.us/xdoc/2.16.03/html/nasmdoc0.html">DOCUMENTACION</a></li>
             <li><a href="https://github.com/netwide-assembler/nasm">REPOSITORIOS</a></li>
           </ul>

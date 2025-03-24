@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import nasm from "../../assets/nasm.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ function Navbar() {
       </div>
 
       <nav className={`nasm-navbar__links ${isMobileMenuOpen ? "open" : ""}`}>
-        <a href="#" className="nasm-link nasm-active">Codigo</a>
+        <Link to="/ejercicios" className="nasm-link nasm-active">Codigo</Link>
         <a href="https://www.nasm.us/xdoc/2.16.03/html/nasmdoc0.html">Documentacion</a>
         <a href="https://forum.nasm.us/">Blog</a>
         <a href="https://www.youtube.com/playlist?list=PL2EF13wm-hWCoj6tUBGUmrkJmH1972dBB">Videos</a>
