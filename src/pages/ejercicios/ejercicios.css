@@ -1,0 +1,45 @@
+/* src/pages/ejercicios.css */
+
+/* Contenedor principal */
+.ejercicios-container {
+    max-width: 800px; 
+    margin: 2rem auto; 
+    padding: 1rem; 
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Título principal */
+  .ejercicios-container h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Texto general */
+  .ejercicios-container p {
+    line-height: 1.6;
+  }
+  
+  /* Lista de ejercicios */
+  .ejercicios-list {
+    margin-top: 2rem;
+    display: grid;
+    grid-gap: 1rem;
+  }
+  
+  /* Cada ejercicio */
+  .ejercicio-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  
+  .ejercicio-item h3 {
+    margin-top: 0;
+  }
+  

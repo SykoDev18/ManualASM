@@ -8,7 +8,7 @@ import Welcome from './components/Bienvenida/Welcome'
 import Frases from './components/Carrusel frases/CarouselF'
 import Posible from './components/Posible/Posible'
 import Cookie from './components/Cookies/Cookie'
-import ejercicios from "./pages/ejercicios"
+import ejercicios from "./pages/ejercicios/ejercicios"
 
 import { Routes, Route } from "react-router-dom";
 
@@ -19,7 +19,6 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        {/* Ruta a "/" -> mostramos tu contenido “principal” */}
         <Route
           path="/"
           element={
@@ -53,14 +52,8 @@ function App() {
             </>
           }
         />
-
-        {/* Ruta a "/ejercicios" -> mostramos el componente ejercicios */}
         <Route path="/ejercicios" element={<ejercicios />} />
-
-        {/* (Opcional) Ruta comodín para 404 */}
-        {/* <Route path="*" element={<h2>Página no encontrada</h2>} /> */}
       </Routes>
-
       <Footer />
     </>
   )
