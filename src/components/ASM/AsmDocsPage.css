@@ -1,133 +1,155 @@
-/* Contenedor padre con sidebar (izq) y contenido (der) */
+/* === Layout principal con sidebar a la izquierda y contenido a la derecha === */
 .asm-docs__layout {
-    display: grid;
-    grid-template-columns: 250px 1fr; /* ancho fijo para sidebar, resto para contenido */
-    gap: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
-    min-height: 100vh; /* para ocupar alto de la ventana */
-    background-color: #fff;
-  }
-  
-  /* Barra lateral */
-  .asm-docs__sidebar {
-    border-right: 1px solid #ccc;
-    padding: 1rem;
-  }
-  
-  /* Título principal de la sidebar */
-  .sidebar__title {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-  }
-  
-  /* Lista principal de secciones */
-  .sidebar__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Cada sección con su título */
-  .sidebar__section {
-    margin-bottom: 1rem;
-  }
-  
-  /* Botón para el título de la sección */
-  .section__title {
-    background: none;
-    border: none;
-    color: #0070f3;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-  }
-  .section__title:hover {
-    background-color: #f2f2f2;
-  }
-  
-  /* Lista de subsecciones */
-  .subsection__list {
-    list-style: none;
-    margin: 0.5rem 0 0 0;
-    padding-left: 1rem; /* indentado */
-    border-left: 1px solid #ddd;
-  }
-  
-  /* Botón de cada subsección */
-  .subsection__list button {
-    display: block;
-    background: none;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    margin-top: 0.2rem;
-    transition: background-color 0.2s, color 0.2s;
-  }
-  .subsection__list button:hover {
-    background-color: #f0f0f0;
-    color: #0070f3;
-  }
-  
-  /* Subsección activa (la que está en el content) */
-  .subsection__active {
-    background-color: #0070f3 !important;
-    color: #fff !important;
-  }
-  
-  /* Área de contenido principal */
-  .asm-docs__content {
-    padding: 1rem;
-    overflow-y: auto; /* scrollbar si es mucho contenido */
-  }
-  
-  /* El contenido en sí */
-  .content__wrapper h2 {
-    margin-top: 0;
-    color: #111;
-  }
-  .content__wrapper p {
-    line-height: 1.6;
-    color: #333;
-  }
+  display: grid;
+  grid-template-columns: 250px 1fr; /* ancho fijo para sidebar, resto para contenido */
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: 100vh; /* ocupa toda la altura de la ventana */
+  background-color: #fff;
+}
 
-  /* Estilo del botón de “Copiar” */
-  button {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-  }
+/* === Barra lateral (sidebar) === */
+.asm-docs__sidebar {
+  border-right: 1px solid #ccc;
+  padding: 1rem;
+}
 
-  button:hover {
-    background-color: #ddd;
-  }
+/* Título principal de la sidebar */
+.sidebar__title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
 
-  .syntaxhighlighter {
-    font-size: 0.95rem;
-    border-radius: 6px;
-  }
+/* Lista principal de secciones en la sidebar */
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  /* Contenedor principal de la intro */
+/* Cada “sección” con su título desplegable */
+.sidebar__section {
+  margin-bottom: 1rem;
+}
+
+/* Botón del título de la sección */
+.section__title {
+  background: none;
+  border: none;
+  color: #0070f3;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.section__title:hover {
+  background-color: #f2f2f2;
+}
+
+/* Lista de subsecciones (cuando se despliega) */
+.subsection__list {
+  list-style: none;
+  margin: 0.5rem 0 0 0;
+  padding-left: 1rem; /* indentado */
+  border-left: 1px solid #ddd;
+}
+
+/* Botones de subsección */
+.subsection__list button {
+  display: block;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.2rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.subsection__list button:hover {
+  background-color: #f0f0f0;
+  color: #0070f3;
+}
+
+/* La subsección activa (la que se está mostrando) */
+.subsection__active {
+  background-color: #0070f3 !important;
+  color: #fff !important;
+}
+
+/* === Área de contenido principal === */
+.asm-docs__content {
+  padding: 1rem;
+  overflow-y: auto; /* scrollbar si es mucho contenido */
+}
+
+/* Estilos generales para headings y párrafos dentro del contenido */
+.asm-docs__content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.asm-docs__content h2 {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.asm-docs__content p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* En caso de usar .content__wrapper para algo en concreto */
+.content__wrapper h2 {
+  margin-top: 0;
+  color: #111;
+}
+.content__wrapper p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === Botón “Copiar” (si lo usas en tu snippets) === */
+button {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+/* Estilo para resaltador de sintaxis */
+.syntaxhighlighter {
+  font-size: 0.95rem;
+  border-radius: 6px;
+}
+
+/* === Bloque de introducción ASM (asm-intro) === */
 .asm-intro {
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
   color: #333;
+  text-align: left; /* Texto alineado a la izquierda */
 }
 
-/* Título destacado */
+/* Título principal de la intro */
 .asm-intro__title {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -135,38 +157,54 @@
   text-align: center;
 }
 
-/* Bloque de características */
+/* Bloque “features” dentro de la intro */
 .asm-intro__features {
   margin: 1rem 0;
 }
-
 .asm-intro__features h3 {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
   color: #34495e;
 }
-
-/* Lista de características */
 .asm-intro__features ul {
   list-style: disc inside;
   margin: 0.5rem 0 1rem 0;
   padding: 0;
 }
-
 .asm-intro__features li {
   margin-bottom: 0.3rem;
 }
 
-  /* Responsive: en pantallas pequeñas, sidebar puede ocupar todo el ancho
-     y/o podemos hacer que se colapse, etc. 
-     Aquí sólo lo apilamos en 1 columna. */
-  @media (max-width: 768px) {
-    .asm-docs__layout {
-      grid-template-columns: 1fr;
-    }
-    .asm-docs__sidebar {
-      border-right: none;
-      border-bottom: 1px solid #ccc;
-    }
+/* === Tabla de características (tipo Next.js) === */
+.asm-features-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.asm-features-table th,
+.asm-features-table td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+.asm-features-table th {
+  text-align: left;
+  background-color: #f9f9f9;
+}
+
+.asm-features-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* === Responsivo: en pantallas pequeñas, la sidebar pasa arriba y contenido abajo === */
+@media (max-width: 768px) {
+  .asm-docs__layout {
+    grid-template-columns: 1fr;
   }
-  
+  .asm-docs__sidebar {
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+}
