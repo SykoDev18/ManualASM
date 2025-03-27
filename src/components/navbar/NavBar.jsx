@@ -30,13 +30,7 @@ function Navbar() {
         <a href="https://www.youtube.com/playlist?list=PL2EF13wm-hWCoj6tUBGUmrkJmH1972dBB">Videos</a>
       </nav>
 
-      {/* Buscador + Botón a la derecha */}
       <div className="nasm-navbar__actions">
-        <input
-          type="text"
-          placeholder="Buscar documentación..."
-          className="nasm-navbar__search"
-        />
         <a href="https://github.com/netwide-assembler/nasm" >
         <button className="nasm-navbar__btn nasm-btn-transparent">
           &#128060; Repositorios
@@ -49,9 +43,9 @@ function Navbar() {
         </a>
       </div>
 
-      {/* Botón hamburguesa para mobile */}
+
       <button className="nasm-navbar__hamburger" onClick={toggleMobileMenu}>
-        &#9776; {/* ícono hamburguesa */}
+        &#9776; 
       </button>
     </header>
   );

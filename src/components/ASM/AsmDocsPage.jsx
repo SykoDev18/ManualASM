@@ -1,8 +1,23 @@
-// src/components/AsmDocsPage.jsx
 import React, { useState } from "react";
 import "./AsmDocsPage.css";
+//Instalacion
+import Inst from "./SeccionInstalacion"
+//ASM PURO
+import LeerPuro from"./SeccionLeerAsmPuro"
+import Seccion1AsmPuro from "./Seccion1AsmPuro"
+import CicloPuro from "./SeccionCicloAsmPuro"
+import SumaPuro from "./SeccionSumaAsmPuro"
+import CicloSuma from "./SeccionSumaCicloAsmPuro"
+import Calculadora from "./SeccionCalculadoraAsmPuro"
+//ASM + GCC
+import LeerGCC from "./ASMGCC/SeccionLeerAsmGcc"
+import SumaGCC from "./ASMGCC/SeccionSumaAsmGcc"
+import Raiz from "./ASMGCC/SeccionRaizAsmGcc"
+import Piramide from "./ASMGCC/SeccionPiramideAsmGcc"
+import Factorial from "./ASMGCC/SeccionFactorialAsmGcc"
+import Espar from "./ASMGCC/SeccionEsParAsmGcc"
+import Calc from "./ASMGCC/SeccionCalcExtendidaAsmGcc"
 
-/* Data de las secciones y sus subsecciones */
 const sidebarData = [
   {
     title: "Empieza",
@@ -11,80 +26,75 @@ const sidebarData = [
   {
     title: "ASM Puro",
     subsections: [
-      "Subsección 1",
-      "Subsección 2",
-      "Subsección 3",
-      "Subsección 4",
-      "Subsección 5",
-      "Subsección 6",
+      "Hola Mundo",
+      "Leer",
+      "Ciclo",
+      "Suma",
+      "Suma y Ciclo",
+      "Calculadora",
     ],
   },
   {
     title: "ASM + GCC",
     subsections: [
-      "Subsección A",
-      "Subsección B",
-      "Subsección C",
-      "Subsección D",
-      "Subsección E",
+      "Leer with C",
+      "Suma GCC",
+      "Raiz",
+      "Piramide",
+      "Factorial",
+      "Es par",
+      "Calculadora GCC",
     ],
   },
 ];
 
-/* Contenido simulado para cada subsección (podrías cargarlo dinámicamente) */
+
 const contentData = {
-  "Instalación": "<h2>Instalación de NASM</h2><p>Aquí va cómo instalar NASM...</p>",
-  "Subsección 1": "<h2>ASM Puro - Tema 1</h2><p>Contenido de la subsección 1</p>",
-  "Subsección 2": "<h2>ASM Puro - Tema 2</h2><p>Contenido de la subsección 2</p>",
-  "Subsección 3": "<h2>ASM Puro - Tema 3</h2><p>Contenido de la subsección 3</p>",
-  "Subsección 4": "<h2>ASM Puro - Tema 4</h2><p>Contenido de la subsección 4</p>",
-  "Subsección 5": "<h2>ASM Puro - Tema 5</h2><p>Contenido de la subsección 5</p>",
-  "Subsección 6": "<h2>ASM Puro - Tema 6</h2><p>Contenido de la subsección 6</p>",
-  "Subsección A": "<h2>ASM + GCC - Tema A</h2><p>Contenido de la subsección A</p>",
-  "Subsección B": "<h2>ASM + GCC - Tema B</h2><p>Contenido de la subsección B</p>",
-  "Subsección C": "<h2>ASM + GCC - Tema C</h2><p>Contenido de la subsección C</p>",
-  "Subsección D": "<h2>ASM + GCC - Tema D</h2><p>Contenido de la subsección D</p>",
-  "Subsección E": "<h2>ASM + GCC - Tema E</h2><p>Contenido de la subsección E</p>",
+  "Instalación": <Inst/>,
+  "Hola Mundo": <Seccion1AsmPuro />,
+  "Leer": <LeerPuro/>,
+  "Ciclo": <CicloPuro/>,
+  "Suma": <SumaPuro />,
+  "Suma y Ciclo": <CicloSuma/>,
+  "Calculadora":<Calculadora/>,
+  //ASM+GCC
+  "Leer with C": <LeerGCC/>,
+  "Suma GCC":<SumaGCC/>,
+  "Raiz":<Raiz/>,
+  "Piramide":<Piramide/>,
+  "Factorial":<Factorial/>,
+  "Es par":<Espar/>,
+  "Calculadora GCC":<Calc/>,
 };
 
 function AsmDocsPage() {
-  // Sección y subsección activas
   const [openSectionIndex, setOpenSectionIndex] = useState(null);
   const [selectedSubsection, setSelectedSubsection] = useState("");
 
-  // Toggle para abrir/cerrar la sección (acordeón)
   const handleToggleSection = (index) => {
     setOpenSectionIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  // Manejar clic en subsección
-  const handleSubsectionClick = (subsection) => {
-    setSelectedSubsection(subsection);
+  const handleSubsectionClick = (sub) => {
+    setSelectedSubsection(sub);
   };
 
-  // Contenido HTML que vamos a renderizar (si existe en contentData)
-  const selectedContentHtml = contentData[selectedSubsection] || `
-    <h2>Bienvenido a la Documentación de NASM</h2>
-    <p>Selecciona una subsección en la barra lateral para ver su contenido.</p>
-  `;
+
+  const selectedContent = contentData[selectedSubsection] || null;
 
   return (
     <div className="asm-docs__layout">
-      {/* Barra lateral izquierda */}
       <aside className="asm-docs__sidebar">
         <h3 className="sidebar__title">Documentación ASM</h3>
         <ul className="sidebar__list">
           {sidebarData.map((section, idx) => (
             <li key={section.title} className="sidebar__section">
-              {/* Título de la sección */}
               <button
                 className="section__title"
                 onClick={() => handleToggleSection(idx)}
               >
                 {section.title}
               </button>
-
-              {/* Listado de subsecciones (acordeón) */}
               {openSectionIndex === idx && (
                 <ul className="subsection__list">
                   {section.subsections.map((sub) => (
@@ -106,13 +116,57 @@ function AsmDocsPage() {
         </ul>
       </aside>
 
-      {/* Contenido principal */}
       <main className="asm-docs__content">
-        {/* Renderizamos el HTML con dangerouslySetInnerHTML */}
-        <div
-          className="content__wrapper"
-          dangerouslySetInnerHTML={{ __html: selectedContentHtml }}
-        />
+        {/* Si no hay nada seleccionado, mostramos un texto default */}
+        {!selectedSubsection && (
+          <div className="asm-intro">
+            <h2 className="asm-intro__title">Bienvenido a la Documentación de ASM</h2>
+            <p>
+              <strong>El ensamblador (Assembly, ASM)</strong> es un lenguaje de 
+              <em>muy bajo nivel</em> que permite un control casi directo sobre el 
+              hardware. Cada instrucción corresponde de cerca a una instrucción 
+              máquina específica del procesador.
+            </p>
+            <div className="asm-intro__features">
+              <h3>Principales características de ASM</h3>
+              <ul>
+                <li>
+                  <strong>Control absoluto:</strong> acceso directo a registros, memoria 
+                  y todas las instrucciones CPU para optimizar procesos críticos.
+                </li>
+                <li>
+                  <strong>Dependencia de la arquitectura:</strong> cada procesador 
+                  (x86, x86_64, ARM, etc.) usa un conjunto de instrucciones único.
+                </li>
+                <li>
+                  <strong>Alto rendimiento:</strong> útil para rutinas de muy bajo 
+                  nivel que requieren máxima velocidad o tamaño mínimo.
+                </li>
+                <li>
+                  <strong>Dificultad de mantenimiento:</strong> la ausencia de 
+                  abstracciones lo hace menos legible y más propenso a errores 
+                  si no se documenta correctamente.
+                </li>
+              </ul>
+            </div>
+            <p>
+              En esta documentación encontrarás ejemplos y tutoriales de <em>ASM puro</em> 
+              y proyectos que combinan <em>ASM + GCC</em>. ¡Explora la barra lateral para 
+              comenzar!
+            </p>
+          </div>
+        )}
+
+
+
+        {/* Si la subsección actual es un string, usamos dangerouslySetInnerHTML */}
+        {typeof selectedContent === "string" && (
+          <div
+            dangerouslySetInnerHTML={{ __html: selectedContent }}
+          />
+        )}
+
+        {React.isValidElement(selectedContent) && selectedContent}
       </main>
     </div>
   );

@@ -1,0 +1,51 @@
+.calc-asm__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .calc-asm__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .calc-asm__code-container {
+    position: relative;
+    margin: 0 auto 2rem auto;
+  }
+  
+  .calc-asm__code-snippet {
+    text-align: left; /* Código alineado a la izquierda */
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .calc-asm__copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .calc-asm__copy-button:hover {
+    background-color: #ddd;
+  }
+  
+  .calc-asm__subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+  }
+  
+  .calc-asm__text {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  

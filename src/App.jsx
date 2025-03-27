@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import reactLogo from './assets/nasm.png'
 import viteLogo from './assets/hola.png'
 import './App.css'
 import Navbar from './components/navbar/NavBar'
@@ -8,7 +8,9 @@ import Welcome from './components/Bienvenida/Welcome'
 import Frases from './components/Carrusel frases/CarouselF'
 import Posible from './components/Posible/Posible'
 import Cookie from './components/Cookies/Cookie'
-import ejercicios from "./pages/ejercicios/ejercicios"
+import Asm from './components/ASM/AsmDocsPage'
+import ScrollToTop from './components/ScrollToTop'
+
 
 import { Routes, Route } from "react-router-dom";
 
@@ -18,6 +20,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop/>
       <Routes>
         <Route
           path="/"
@@ -27,8 +30,9 @@ function App() {
               <Frases />
               <Posible />
               <Cookie />
+              <Asm />
               <div>
-                <a href="https://vite.dev" target="_blank">
+                <a href="https://pbs.twimg.com/media/GjTjMiKbQAEEvKq?format=jpg&name=900x900" target="_blank">
                   <img src={viteLogo} className="logo" alt="Vite logo" />
                 </a>
                 <a
@@ -47,7 +51,7 @@ function App() {
                 <p>Esto pronto sera un manual de asm, neta me lo dijo un tio</p>
               </div>
               <p className="read-the-docs">
-                No clickes en el logo de React, es una trampa
+                No clickes en el Doge, es una trampa
               </p>
             </>
           }

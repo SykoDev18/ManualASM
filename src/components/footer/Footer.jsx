@@ -6,9 +6,7 @@ import logoWomakers from "../../assets/Hehe.png"
 function Footer() {
   return (
     <footer className="footer">
-      {/* Contenedor principal del footer */}
       <div className="footer__container">
-        {/* Sección con logo y texto */}
         <div className="footer__logo-section">
           <img src={logoWomakers} alt="WomakersCode Logo" className="footer__logo" />
           <p className="footer__description">
@@ -16,7 +14,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* Sección con enlaces de “Institucional” */}
         <div className="footer__links-block">
           <h3 className="footer__title">Recursos</h3>
           <ul className="footer__links">
@@ -26,7 +23,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Sección con enlaces de “Plataforma” */}
         <div className="footer__links-block">
           <h3 className="footer__title">Plataforma</h3>
           <ul className="footer__links">
@@ -35,8 +31,6 @@ function Footer() {
           </ul>
         </div>
       </div>
-
-      {/* Barra inferior de copyright */}
       <div className="footer__bottom">
         <span>© Derechos de autor Manual NASM 2021-2025. Reservados todos los derechos.</span>
         <span className="footer__bottom-right">Hablar es barato. !Ensename el codigo!</span>

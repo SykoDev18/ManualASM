@@ -1,0 +1,67 @@
+.seccion1__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center; /* Centra títulos, etc. */
+  }
+  
+  .seccion1__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  /* Contenedor para colocar el snippet y el botón de copiar */
+  .seccion1__code-container {
+    position: relative;
+    margin: 0 auto 2rem auto;
+    /* background: #f7f7f7; */
+  }
+  
+  /* Snippet: forzamos ancho 100% pero se alinea left internamente */
+  .seccion1__code-snippet {
+    text-align: left; /* hace que el syntax highlighter quede a la izquierda */
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  /* Botón de copiar: arriba-derecha */
+  .seccion1__copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .seccion1__copy-button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Subtítulo (Descripción, Cómo ejecutarlo) */
+  .seccion1__subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+  }
+  
+  /* Texto general */
+  .seccion1__text {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Bloque pre */
+  .seccion1__pre {
+    background-color: #f7f7f7;
+    padding: 0.8rem;
+    text-align: left;
+    overflow-x: auto;
+    color: #333;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+  }
+  
