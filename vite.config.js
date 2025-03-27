@@ -5,5 +5,4 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/ManualASM/',
   plugins: [react()],
-  base: 'https://sykodev18.github.io/ManualASM/',
 })
